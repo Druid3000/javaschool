@@ -6,6 +6,6 @@ public class First {
 
     public static void main(String[] args) {
      log.info("Java уже здесь!");
-        System.out.println("test");
+     System.out.println("test");
     }
 }
