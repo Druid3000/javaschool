@@ -5,7 +5,7 @@ public class Matrix {
 
         int sizeOfMatrix;
 
-        sizeOfMatrix = 10;
+        sizeOfMatrix = 11;
 
         int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
 
@@ -16,6 +16,7 @@ public class Matrix {
             matrix[i] = new int[sizeOfMatrix];
         }
 
+        //TODO Переименовать i в row, а j в cells, кажется так.
         for (int j = 0; j < sizeOfMatrix; j++) {
             for (int i = 0; i < sizeOfMatrix; i++) {
                 if (i == j || j == (sizeOfMatrix - 1 - i)) {
@@ -23,15 +24,9 @@ public class Matrix {
                 } else {
                     matrix[i][j] = 0;
                 }
-            }
-        }
-
-        for (int j = 0; j < sizeOfMatrix; j++) {
-            for (int i = 0; i < sizeOfMatrix; i++) {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
-
     }
 }
