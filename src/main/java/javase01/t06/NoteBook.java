@@ -1,11 +1,8 @@
 package javase01.t06;
 
-//import javase01.t06.Note;
-//Я хз, надо ли в таком случае импортить, ошибки-то нет.
-
 public class NoteBook {
-    //TODO По сути, нужно написать самому Arraylist. Как сказал Лапин, в этом задумка.
-    //TODO не понял, можно ли заюзать Arraylist
+    //TODO По сути, нужно написать самому Arraylist. Как сказал Вячеслав Лапин,
+    //TODO в этом задумка. Не понял, можно ли заюзать Arraylist
 
     Note[] notes;
     private static final int CAPACITY_OF_NOTEBOOK = 10;

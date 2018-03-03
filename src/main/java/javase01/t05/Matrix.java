@@ -16,15 +16,14 @@ public class Matrix {
             matrix[i] = new int[sizeOfMatrix];
         }
 
-        //TODO Переименовать i в row, а j в cells, кажется так.
-        for (int j = 0; j < sizeOfMatrix; j++) {
-            for (int i = 0; i < sizeOfMatrix; i++) {
-                if (i == j || j == (sizeOfMatrix - 1 - i)) {
-                    matrix[i][j] = 1;
+        for (int column = 0; column < sizeOfMatrix; column++) {
+            for (int row = 0; row < sizeOfMatrix; row++) {
+                if (row == column || column == (sizeOfMatrix - 1 - row)) {
+                    matrix[row][column] = 1;
                 } else {
-                    matrix[i][j] = 0;
+                    matrix[row][column] = 0;
                 }
-                System.out.print(matrix[i][j] + " ");
+                System.out.print(matrix[row][column] + " ");
             }
             System.out.println();
         }
