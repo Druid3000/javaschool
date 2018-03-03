@@ -1,4 +1,5 @@
 package javase01.t03;
+
 import static java.lang.Math.tan;
 
 public class CalculatingFunctionValues {
@@ -16,7 +17,7 @@ public class CalculatingFunctionValues {
         System.out.println("+---------+----------+");
 
         for (double i = a; i < b; i += step) {
-            System.out.println("|   " + i + "   | " + (tan(2*i)-3)+"|");
+            System.out.println("|   " + i + "   | " + (tan(2 * i) - 3) + "|");
         }
 
         System.out.println("+---------+----------+");

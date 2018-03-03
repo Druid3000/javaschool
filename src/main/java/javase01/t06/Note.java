@@ -8,27 +8,27 @@ public class Note {
     public Note() {
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setBody(String body){
+    public void setBody(String body) {
         this.body = body;
     }
 
-    public void setId(int id){
-        this.id=id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public String getBody(){
+    public String getBody() {
         return body;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 }

@@ -13,8 +13,7 @@ public class NoteBook {
 
     public NoteBook() {
 
-        countOfNotes=0;
-
+        countOfNotes = 0;
         notes = new Note[CAPACITY_OF_NOTEBOOK];
 
         for (int i = 0; i < CAPACITY_OF_NOTEBOOK; i++)
@@ -28,19 +27,32 @@ public class NoteBook {
         countOfNotes++;
     }
 
-    public void removeNote(){
+    private void replaceTheNoteWithTheFollowingNote(int id) {
+        notes[id].setId(notes[id + 1].getId());
+        notes[id].setTitle(notes[id + 1].getTitle());
+        notes[id].setBody(notes[id + 1].getBody());
 
+        if (countOfNotes - 1 != id) {
+            replaceTheNoteWithTheFollowingNote(id + 1);
+        }
     }
 
-    public void editNote(int id, String title, String body){
-        addNote(id, title, body);
+    public void removeNote(int id) {
+        replaceTheNoteWithTheFollowingNote(id);
+        countOfNotes--;
     }
 
-    public void showAllNotes(){
+    public void editNote(int id, String title, String body) {
+        notes[id].setId(id);
+        notes[id].setTitle(title);
+        notes[id].setBody(body);
+    }
+
+    public void showAllNotes() {
         for (int i = 0; i < countOfNotes; i++) {
-            System.out.println("Title = " +
+            System.out.println(notes[i].getId() + " | " +
                     notes[i].getTitle() +
-                    " Body = " +
+                    ": " +
                     notes[i].getBody());
         }
     }
