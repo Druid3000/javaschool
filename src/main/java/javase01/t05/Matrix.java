@@ -7,10 +7,10 @@ public class Matrix {
 
         sizeOfMatrix = 11;
 
-        int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
-
         //TODO Нужно проверять, является ли матрица квадратной
         //TODO и если нет, то чего-то с этим делать надо.
+
+        int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
 
         for (int i = 0; i < sizeOfMatrix; i++) {
             matrix[i] = new int[sizeOfMatrix];
