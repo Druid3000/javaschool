@@ -3,23 +3,30 @@ package javase01.t03;
 import static java.lang.Math.tan;
 
 public class CalculatingFunctionValues {
-    public static void main(String[] args) {
-        double a;
-        double b;
-        double step;
 
-        a = 0;
-        b = 10;
-        step = 0.5;
+    private double a;
+    private double b;
+    private double step;
 
-        System.out.println("+---------+----------+");
-        System.out.println("|    X    |   F(x)   |");
-        System.out.println("+---------+----------+");
+    public CalculatingFunctionValues(double a, double b, double step) {
+        this.a = a;
+        this.b = b;
+        this.step = step;
+    }
 
-        for (double i = a; i < b; i += step) {
-            System.out.println("|   " + i + "   | " + (tan(2 * i) - 3) + "|");
+    private double getValueOfFunction(double x) {
+        return tan(2 * x) - 3;
+    }
+
+    public void printTable() {
+        System.out.println("+---------------------------------+");
+        System.out.println("|        x       |       f(x)     |");
+        System.out.println("+---------------------------------+");
+
+        for (double x = a; x < b; x += step) {
+            System.out.printf("|% 3.9e|% 3.9e|%n", x, getValueOfFunction(x));
         }
 
-        System.out.println("+---------+----------+");
+        System.out.print("+---------------------------------+");
     }
 }
