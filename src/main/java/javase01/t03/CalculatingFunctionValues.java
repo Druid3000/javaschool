@@ -1,5 +1,4 @@
 package javase01.t03;
-
 import static java.lang.Math.tan;
 
 public class CalculatingFunctionValues {
