@@ -14,10 +14,10 @@ public class Matrix {
             matrix[i] = new int[sizeOfMatrix];
         }
 
-        elementsInitialization();
+        initializeItems();
     }
 
-    private void elementsInitialization() {
+    private void initializeItems() {
         for (int column = 0; column < sizeOfMatrix; column++) {
             for (int row = 0; row < sizeOfMatrix; row++) {
                 if (row == column || column == (sizeOfMatrix - 1 - row)) {
