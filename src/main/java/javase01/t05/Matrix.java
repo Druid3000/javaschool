@@ -13,9 +13,11 @@ public class Matrix {
         for (int i = 0; i < sizeOfMatrix; i++) {
             matrix[i] = new int[sizeOfMatrix];
         }
+
+        elementsInitialization();
     }
 
-    public void printMatrix(){
+    private void elementsInitialization() {
         for (int column = 0; column < sizeOfMatrix; column++) {
             for (int row = 0; row < sizeOfMatrix; row++) {
                 if (row == column || column == (sizeOfMatrix - 1 - row)) {
@@ -23,6 +25,13 @@ public class Matrix {
                 } else {
                     matrix[row][column] = 0;
                 }
+            }
+        }
+    }
+
+    public void printMatrix() {
+        for (int column = 0; column < sizeOfMatrix; column++) {
+            for (int row = 0; row < sizeOfMatrix; row++) {
                 System.out.print(matrix[row][column] + " ");
             }
             System.out.println();
