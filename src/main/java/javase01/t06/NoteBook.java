@@ -1,9 +1,6 @@
 package javase01.t06;
 
 public class NoteBook {
-    //TODO По сути, нужно написать самому Arraylist. Как сказал Вячеслав Лапин,
-    //TODO в этом задумка. Не понял, можно ли заюзать Arraylist
-
     Note[] notes;
     private static final int CAPACITY_OF_NOTEBOOK = 10;
     private int countOfNotes;
