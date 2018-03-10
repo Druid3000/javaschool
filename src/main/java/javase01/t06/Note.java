@@ -1,11 +1,24 @@
 package javase01.t06;
-
+/**
+ * The class describing a note.
+ *
+ * <p>
+ *     The class {@code Note} describes main functions
+ *     and parameters of a note.
+ *
+ * </p>
+ *
+ * @author Sergey Sarvarov
+ *
+ */
 public class Note {
+
+    private int id;
     private String title;
     private String body;
-    private int id;
 
-    public Note() {
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setTitle(String title) {
@@ -16,8 +29,8 @@ public class Note {
         this.body = body;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -26,9 +39,5 @@ public class Note {
 
     public String getBody() {
         return body;
-    }
-
-    public int getId() {
-        return id;
     }
 }

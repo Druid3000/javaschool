@@ -1,5 +1,4 @@
 package javase01.t02;
-
 import static java.lang.Math.pow;
 
 public class MinFinder {
