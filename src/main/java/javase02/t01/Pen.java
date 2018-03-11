@@ -6,7 +6,7 @@ public class Pen implements Stationery {
     private Color color;
     private String producerName;
 
-    public Pen (int price, Color color, String producerName){
+    public Pen(int price, Color color, String producerName) {
         this.price = price;
         this.color = color;
         this.producerName = producerName;
@@ -16,41 +16,41 @@ public class Pen implements Stationery {
         return price;
     }
 
-    public Color getColor(){
+    public Color getColor() {
         return color;
     }
 
-    public String getProducerName(){
+    public String getProducerName() {
         return producerName;
     }
 
     public boolean equals(Object obj) {
-       if (this == obj)
-           return true;
+        if (this == obj)
+            return true;
 
-       if (null == obj)
-           return false;
+        if (null == obj)
+            return false;
 
-       if (getClass() != obj.getClass())
-           return false;
+        if (getClass() != obj.getClass())
+            return false;
 
-       Pen pen = (Pen) obj;
+        Pen pen = (Pen) obj;
 
-       if(price != pen.price)
-           return false;
+        if (price != pen.price)
+            return false;
 
-       if (null == producerName){
-           return (producerName == pen.producerName);
-       } else {
-           if(!producerName.equals(pen.producerName)){
-               return false;
-           }
-       }
+        if (null == producerName) {
+            return (producerName == pen.producerName);
+        } else {
+            if (!producerName.equals(pen.producerName)) {
+                return false;
+            }
+        }
 
-        if (null == color){
+        if (null == color) {
             return (color == pen.color);
         } else {
-            if(!color.equals(pen.color)){
+            if (!color.equals(pen.color)) {
                 return false;
             }
         }
@@ -59,12 +59,12 @@ public class Pen implements Stationery {
     }
 
     public int hashCode() {
-        return (int) (31*price + ((null == color) ? 0 : color.hashCode())
-                        +((null == producerName) ? 0 :producerName.hashCode()));
+        return (int) (31 * price + ((null == color) ? 0 : color.hashCode())
+                + ((null == producerName) ? 0 : producerName.hashCode()));
     }
 
     public String toString() {
-        return getClass().getName() +"@" + "price: " + price
-                +", color: " + color + ", producerName: " + producerName;
+        return getClass().getName() + "@" + "price: " + price
+                + ", color: " + color + ", producerName: " + producerName;
     }
 }
