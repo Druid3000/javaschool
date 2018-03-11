@@ -1,15 +1,15 @@
 package javase01.t06;
+
 /**
  * The class describing a note.
- *
  * <p>
- *     The class {@code Note} describes main functions
- *     and parameters of a note.
- *
+ * <p>
+ * The class {@code Note} describes main functions
+ * and parameters of a note.
+ * <p>
  * </p>
  *
  * @author Sergey Sarvarov
- *
  */
 public class Note {
 

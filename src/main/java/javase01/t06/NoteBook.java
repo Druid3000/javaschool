@@ -1,23 +1,23 @@
 package javase01.t06;
+
 /**
  * The class describing a notebook.
- *
  * <p>
- *     The class {@code NoteBook} describes main functions
- *     and parameters of a notebook.
+ * <p>
+ * The class {@code NoteBook} describes main functions
+ * and parameters of a notebook.
  * </p>
  *
  * @author Sergey Sarvarov
  */
 public class NoteBook {
 
-    Note[] notes;
+    private Note[] notes;
     private static final int CAPACITY_OF_NOTEBOOK = 10;
     private int countOfNotes;
 
     /**
      * Constructor
-     *
      */
     public NoteBook() {
         countOfNotes = 0;
@@ -30,9 +30,9 @@ public class NoteBook {
     /**
      * Add a note to the notebook.
      *
-     * @param id - note identifier
+     * @param id    - note identifier
      * @param title - message title
-     * @param body - message body
+     * @param body  - message body
      */
     public void addNote(int id, String title, String body) {
         notes[id].setId(id);
@@ -43,12 +43,12 @@ public class NoteBook {
 
     /**
      * Replace the note with the following note.
-     *
      * <p>
-     *     If a note was deleted it needs to be replaced by
-     *     the following note. Other following notes needs
-     *     to be replaced too. Recursion is used
-     *     for replacing of all notes in the notebook.
+     * <p>
+     * If a note was deleted it needs to be replaced by
+     * the following note. Other following notes needs
+     * to be replaced too. Recursion is used
+     * for replacing of all notes in the notebook.
      * </p>
      *
      * @param id - note identifier
@@ -65,12 +65,12 @@ public class NoteBook {
 
     /**
      * Remove a note from the notebook.
-     *
      * <p>
-     *    @see NoteBook#replaceTheNoteWithTheFollowingNote(int id)
-     * </p>
+     * <p>
      *
      * @param id - note identifier
+     * @see NoteBook#replaceTheNoteWithTheFollowingNote(int id)
+     * </p>
      */
     public void removeNote(int id) {
         replaceTheNoteWithTheFollowingNote(id);
@@ -80,9 +80,9 @@ public class NoteBook {
     /**
      * Edit a note of the notebook.
      *
-     * @param id - note identifier
+     * @param id    - note identifier
      * @param title - message title
-     * @param body - message body
+     * @param body  - message body
      */
     public void editNote(int id, String title, String body) {
         notes[id].setId(id);
@@ -92,9 +92,9 @@ public class NoteBook {
 
     /**
      * Show all notes.
-     *
      * <p>
-     *     The function is used to display all notes.
+     * <p>
+     * The function is used to display all notes.
      * </p>
      */
     public void showAllNotes() {
