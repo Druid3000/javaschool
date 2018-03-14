@@ -1,40 +1,54 @@
 package javase02.t02;
 
 public class WorkPlace {
-    private Stationery[] stationers = {
-            new Pen(100, Color.BLACK, "Parker"),
-            new Paper(5, "SvetoCopy"),
-            new Paper(3, "Snegurochka")
-    };
+
+    Array<Stationery> stationers = new Array<Stationery>();
+
+    public void addStationery(Pen pen) {
+        stationers.addItem(pen);
+    }
+
+    public void addStationery(Paper paper) {
+        stationers.addItem(paper);
+    }
+
+    public void removeStationery(int index) {
+        stationers.removeItem(index);
+    }
+
+    public Stationery getStationery(int index) {
+        return stationers.getItem(index);
+    }
 
     public int getPriceOfAllStationers() {
         int price;
         price = 0;
-        for (Stationery stationery : stationers)
-            price += stationery.getPrice();
+        for (int i = 0; i < stationers.size(); i++) {
+            price += getStationery(i).getPrice();
+        }
         return price;
     }
 
     public int getCountsOfAllStationers() {
-        return stationers.length;
+        return stationers.size();
     }
 
     public int getCountsOfPens() {
         int counts;
         counts = 0;
-        for (Stationery stationery : stationers) {
-            if (stationery instanceof Pen) {
+        for (int i = 0; i < stationers.size(); i++) {
+            if (getStationery(i) instanceof Pen) {
                 counts++;
             }
         }
         return counts;
     }
 
-    public int getCountsOfPaper() {
+    public int getCountsOfPapers() {
         int counts;
         counts = 0;
-        for (Stationery stationery : stationers) {
-            if (stationery instanceof Paper) {
+        for (int i = 0; i < stationers.size(); i++) {
+            if (getStationery(i) instanceof Paper) {
                 counts++;
             }
         }
