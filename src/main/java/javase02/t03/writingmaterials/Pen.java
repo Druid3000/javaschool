@@ -3,6 +3,8 @@ import javase02.t03.writingMaterials;
 
 public class Pen extends writingMaterials{
 
+    private String typeOfInk; //TODO Сделать enum
+
     public void setPrice(){
 
     }

@@ -1,8 +1,8 @@
 package javase02.t03;
 
 abstract class Stationery {
-    protected double price;
-    protected String producerName;
+    private double price;
+    private String producerName;
 
     public abstract void setPrice();
     public abstract void setProducerName();

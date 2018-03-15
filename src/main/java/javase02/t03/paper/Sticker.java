@@ -4,11 +4,22 @@ import javase02.t03.Paper;
 
 public class Sticker extends Paper{
 
+    private int adhesiveness;
+
+    public void setAdhesiveness(int adhesiveness) {
+        this.adhesiveness = adhesiveness;
+    }
+
     public void setPrice(){
 
     }
+
     public void setProducerName(){
 
+    }
+
+    public int getAdhesiveness() {
+        return adhesiveness;
     }
 
     public double getPrice(){
