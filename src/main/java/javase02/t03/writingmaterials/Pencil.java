@@ -3,7 +3,7 @@ import javase02.t03.writingMaterials;
 
 public class Pencil extends writingMaterials{
 
-    private String hardness; //TODO Сделать enum
+    private Hardness hardness;
 
     public void setPrice(){
 
