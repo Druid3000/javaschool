@@ -24,4 +24,12 @@ abstract class Stationery {
     public void setProducerName(String producerName) {
         this.producerName = producerName;
     }
+
+    @Override
+    public String toString() {
+        return "Stationery{" +
+                "price=" + price +
+                ", producerName='" + producerName + '\'' +
+                '}';
+    }
 }

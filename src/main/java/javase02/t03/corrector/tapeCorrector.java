@@ -1,7 +1,8 @@
 package javase02.t03.corrector;
+
 import javase02.t03.Corrector;
 
-public class tapeCorrector extends Corrector{
+public class tapeCorrector extends Corrector {
     private double lengthOfTape;
 
     public tapeCorrector(double price, String producerName, double lengthOfTape) {
@@ -15,6 +16,13 @@ public class tapeCorrector extends Corrector{
 
     public void setLengthOfTape(double lengthOfTape) {
         this.lengthOfTape = lengthOfTape;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "tapeCorrector{" +
+                "lengthOfTape=" + lengthOfTape +
+                "} ";
     }
 }
 

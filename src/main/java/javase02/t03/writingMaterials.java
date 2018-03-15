@@ -1,7 +1,8 @@
 package javase02.t03;
+
 import javase02.t01.Color;
 
-public abstract class writingMaterials extends Stationery{
+public abstract class writingMaterials extends Stationery {
 
     private Color color;
 
@@ -16,5 +17,12 @@ public abstract class writingMaterials extends Stationery{
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "writingMaterials{" +
+                "color=" + color +
+                "} ";
     }
 }

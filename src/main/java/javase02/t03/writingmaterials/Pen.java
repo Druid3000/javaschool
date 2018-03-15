@@ -1,8 +1,9 @@
 package javase02.t03.writingmaterials;
+
 import javase02.t01.Color;
 import javase02.t03.writingMaterials;
 
-public class Pen extends writingMaterials{
+public class Pen extends writingMaterials {
 
     private TypeOfInk typeOfInk;
 
@@ -17,5 +18,12 @@ public class Pen extends writingMaterials{
 
     public void setTypeOfInk(TypeOfInk typeOfInk) {
         this.typeOfInk = typeOfInk;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Pen{" +
+                "typeOfInk=" + typeOfInk +
+                "} ";
     }
 }

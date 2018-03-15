@@ -37,4 +37,13 @@ public abstract class Paper extends Stationery {
     public void setColor(Color color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Paper{" +
+                "height=" + height +
+                ", width=" + width +
+                ", color=" + color +
+                "} ";
+    }
 }

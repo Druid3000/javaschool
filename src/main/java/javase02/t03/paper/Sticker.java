@@ -3,7 +3,7 @@ package javase02.t03.paper;
 import javase02.t01.Color;
 import javase02.t03.Paper;
 
-public class Sticker extends Paper{
+public class Sticker extends Paper {
 
     private int adhesiveness;
 
@@ -20,5 +20,10 @@ public class Sticker extends Paper{
         return adhesiveness;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "Sticker{" +
+                "adhesiveness=" + adhesiveness +
+                "} ";
+    }
 }
