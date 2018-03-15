@@ -5,17 +5,5 @@ public class Pencil extends writingMaterials{
 
     private Hardness hardness;
 
-    public void setPrice(){
 
-    }
-    public void setProducerName(){
-
-    }
-
-    public double getPrice(){
-        return 0.0;
-    }
-    public String getProducerName(){
-        return "0.0";
-    }
 }

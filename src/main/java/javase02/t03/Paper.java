@@ -8,10 +8,4 @@ public abstract class Paper extends Stationery {
     protected int width;
 
     protected Color color;
-
-    public abstract void setPrice();
-    public abstract void setProducerName();
-
-    public abstract double getPrice();
-    public abstract String getProducerName();
 }

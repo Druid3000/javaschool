@@ -5,18 +5,5 @@ public class tapeCorrector extends Corrector{
 
     private double lengthOfTape;
 
-    public void setPrice(){
-
-    }
-    public void setProducerName(){
-
-    }
-
-    public double getPrice(){
-        return 0.0;
-    }
-    public String getProducerName(){
-        return "0.0";
-    }
 }
 
