@@ -5,4 +5,16 @@ public class waterBasedCorrector extends Corrector{
 
     private double capacity;
 
+    public waterBasedCorrector(double price, String producerName, double capacity) {
+        super(price, producerName);
+        this.capacity = capacity;
+    }
+
+    public double getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
+    }
 }
