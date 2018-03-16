@@ -5,10 +5,9 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import javase02.t01.Color;
+import javase02.t02.Array;
 import javase02.t03.writingmaterials.Pen;
 import javase02.t03.writingmaterials.TypeOfInk;
-
-import javase02.t02.Array;
 
 public class Test {
     public static void main(String[] args) {
@@ -26,7 +25,8 @@ public class Test {
         pens1.add(new Pen(25, "Parker", Color.GREEN, TypeOfInk.GEL));
         pens1.add(new Pen(38, "Big", Color.BLUE, TypeOfInk.GEL));
 
-        Collections.sort(pens1, comparator);
+        //Collections.sort(pens1, comparator);
+        pens1.sort(comparator);
 
         for (int i = 0; i < pens1.size(); i++) {
             System.out.println(pens1.get(i));
