@@ -38,13 +38,13 @@ public class Array<T> {
         return cursor;
     }
 
-    public void sort(Comparator c){
+    public void sort(Comparator c) {
         int n = this.size();
         Object temp = null;
 
-        for(int i=0; i < n; i++){
-            for(int j=1; j < (n-i); j++){
-                if(c.compare(array[j-1],array[j])>0) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < (n - i); j++) {
+                if (c.compare(array[j - 1], array[j]) > 0) {
                     temp = array[j - 1];
                     array[j - 1] = array[j];
                     array[j] = temp;
