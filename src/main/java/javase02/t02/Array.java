@@ -1,5 +1,7 @@
 package javase02.t02;
 
+import java.util.Comparator;
+
 public class Array<T> {
     private final int DEFAULT_CAPACITY = 10;
     private Object[] array = new Object[DEFAULT_CAPACITY];
@@ -34,5 +36,20 @@ public class Array<T> {
 
     public int size() {
         return cursor;
+    }
+
+    public void sort(Comparator c){
+        int n = this.size();
+        Object temp = null;
+
+        for(int i=0; i < n; i++){
+            for(int j=1; j < (n-i); j++){
+                if(c.compare(array[j-1],array[j])>0) {
+                    temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
     }
 }
