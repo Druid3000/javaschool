@@ -2,10 +2,10 @@ package javase02.t05;
 
 import java.util.HashMap;
 
-public class Group <T>{
+public class Group<T> {
 
     private Subject subject;
-    private HashMap<String, T> studentsAssessments = new HashMap<String, T>();
+    private HashMap<Student, T> studentsMarks = new HashMap<>();
 
     public Group(Subject subject) {
         this.subject = subject;
@@ -15,19 +15,19 @@ public class Group <T>{
         return subject;
     }
 
-    public void addStudent(String name, T assessment){
-        studentsAssessments.put(name, assessment);
+    public void addStudent(Student student, T mark) {
+        studentsMarks.put(student, mark);
     }
 
-    public void removeStudent(String name){
-        studentsAssessments.remove(name);
+    public void removeStudent(Student student) {
+        studentsMarks.remove(student);
     }
 
-    public T getAssessmentOfStudent(String name){
-        return studentsAssessments.get(name);
+    public T getStudentsMarks(Student student) {
+        return studentsMarks.get(student);
     }
 
-    public boolean isStudentInTheGroup(String name){
-        return studentsAssessments.containsKey(name);
+    public boolean isStudentInTheGroup(Student student) {
+        return studentsMarks.containsKey(student);
     }
 }
