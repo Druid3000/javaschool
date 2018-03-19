@@ -32,6 +32,6 @@ public class Test {
         Printer.printStudentsMarks(listOfGroups, student2);
         Printer.printStudentsMarks(listOfGroups, student3);
 
-        Printer.printStudentsGroups(listOfGroups, student1);
+        Printer.printStudentsGroups(listOfGroups, student3);
     }
 }
