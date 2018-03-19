@@ -4,7 +4,7 @@ public class NuclearSubmarine {
 
     private double speed;
     private double depth;
-    public EngineOfNuclearSubmarine engine;
+    private EngineOfNuclearSubmarine engine;
 
     public NuclearSubmarine() {
         speed = 0.0;
@@ -12,18 +12,18 @@ public class NuclearSubmarine {
         engine = new EngineOfNuclearSubmarine();
     }
 
-    public void startSubmarine(double speed){
+    public void startSubmarine(double speed) {
         this.speed = speed;
         double K = 2;
-        double depthOfLoweringControlRods = speed/K;
+        double depthOfLoweringControlRods = speed / K;
         engine.startTheEngine(depthOfLoweringControlRods);
     }
 
-    public void changeSpeed(double speed){
+    public void changeSpeed(double speed) {
         startSubmarine(speed);
     }
 
-    public void stopSubmarine(){
+    public void stopSubmarine() {
         engine.stopTheEngine();
         this.speed = 0;
     }
@@ -32,11 +32,11 @@ public class NuclearSubmarine {
         this.depth = depth;
     }
 
-    public void printStatusOfSubmarine(){
+    public void printStatusOfSubmarine() {
         System.out.println(
                 "Подводная лодка:" + "\n" +
-                "   Скорость : " + speed + "\n" +
-                "   Глубина: " + depth);
+                        "   Скорость : " + speed + "\n" +
+                        "   Глубина: " + depth);
 
         engine.printStatusOfEngine();
     }
@@ -52,34 +52,34 @@ public class NuclearSubmarine {
             rotationalSpeedOfTurbines = 0;
         }
 
-        public void startTheEngine(double depth){
+        public void startTheEngine(double depth) {
             changeDepthOfLoweringControlRods(depth);
         }
 
-        public void stopTheEngine(){
+        public void stopTheEngine() {
             changeDepthOfLoweringControlRods(0);
         }
 
         public void changeDepthOfLoweringControlRods(double depthOfLoweringControlRods) {
             this.depthOfLoweringControlRods = depthOfLoweringControlRods;
 
-            double K1=2;
-            coolantTemperature = K1*depthOfLoweringControlRods;
+            double K1 = 2;
+            coolantTemperature = K1 * depthOfLoweringControlRods;
 
-            double K2=3;
-            rotationalSpeedOfTurbines = K2*coolantTemperature;
+            double K2 = 3;
+            rotationalSpeedOfTurbines = K2 * coolantTemperature;
         }
 
         public double getRotationalSpeedOfTurbines() {
             return rotationalSpeedOfTurbines;
         }
 
-        public void printStatusOfEngine(){
+        public void printStatusOfEngine() {
             System.out.println(
                     "Двигатель: " + "\n" +
-                    "   Глубина погружения стержней: " + depthOfLoweringControlRods + "\n" +
-                    "   Температура теплоносителя: " + coolantTemperature + "\n" +
-                    "   Скорость вращения турбин: " + rotationalSpeedOfTurbines + "\n");
+                            "   Глубина погружения стержней: " + depthOfLoweringControlRods + "\n" +
+                            "   Температура теплоносителя: " + coolantTemperature + "\n" +
+                            "   Скорость вращения турбин: " + rotationalSpeedOfTurbines + "\n");
         }
     }
 }
