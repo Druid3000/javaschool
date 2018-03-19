@@ -14,8 +14,8 @@ public class NuclearSubmarine {
 
     public void startSubmarine(double speed){
         this.speed = speed;
-        double K3 = 2;
-        double depthOfLoweringControlRods = speed/K3;
+        double K = 2;
+        double depthOfLoweringControlRods = speed/K;
         engine.startTheEngine(depthOfLoweringControlRods);
     }
 
