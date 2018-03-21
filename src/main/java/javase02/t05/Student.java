@@ -26,4 +26,3 @@ public class Student {
         this.surname = surname;
     }
 }
-
