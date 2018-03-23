@@ -16,10 +16,12 @@ public class CrazyLogger {
     String search(String str) {
         StringBuilder result = new StringBuilder();
         String line;
-        int beginningOfLine = 0;
-        int endOfLine = 0;
+        int beginningOfLine;
+        int endOfLine;
+
+        beginningOfLine = 0;
         do {
-            endOfLine = logger.indexOf(";", beginningOfLine) + 2;
+            endOfLine = logger.indexOf("\n", beginningOfLine) + 1;
             line = logger.substring(beginningOfLine, endOfLine);
             beginningOfLine = endOfLine;
 

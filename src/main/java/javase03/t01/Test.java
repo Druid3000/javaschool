@@ -9,6 +9,5 @@ public class Test {
         logger.addMessage("message4");
 
         System.out.println(logger.search("message2"));
-
     }
 }
