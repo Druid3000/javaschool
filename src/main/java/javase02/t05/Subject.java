@@ -13,7 +13,7 @@ public enum Subject {
         this.isDouble = isDouble;
     }
 
-    public Number getMark(Number mark) {
+    public Number convertMark(Number mark) {
         if (isDouble)
             return mark.doubleValue();
         return mark.intValue();

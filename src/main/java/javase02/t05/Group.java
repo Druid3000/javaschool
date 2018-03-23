@@ -14,7 +14,7 @@ public class Group {
     }
 
     public void addStudent(Student student, Number mark) {
-        studentsMarks.put(student, subject.getMark(mark));
+        studentsMarks.put(student, subject.convertMark(mark));
     }
 
     public void removeStudent(Student student) {
