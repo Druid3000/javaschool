@@ -9,19 +9,19 @@ public class Test {
         Student student2 = new Student("Andrey", "Petrov");
         Student student3 = new Student("Victor", "Sidorov");
 
-        Group<Number> group1 = new Group<>(Subject.ENGLISH);
-        group1.addStudent(student1, Subject.ENGLISH.setMark(5));
-        group1.addStudent(student2, Subject.ENGLISH.setMark(4));
-        //group1.addStudent(student3, Subject.ENGLISH.setMark(4));
+        Group group1 = new Group(Subject.ENGLISH);
+        group1.addStudent(student1, 5);
+        group1.addStudent(student2, 4.5);
+        //group1.addStudent(student3, 4);
 
-        Group<Number> group2 = new Group<>(Subject.MATHS);
-        group2.addStudent(student1, Subject.MATHS.setMark(4.1));
-        group2.addStudent(student2, Subject.MATHS.setMark(4.5));
-        group2.addStudent(student3, Subject.MATHS.setMark(5.0));
+        Group group2 = new Group(Subject.MATHS);
+        group2.addStudent(student1, 4);
+        group2.addStudent(student2, 4.5);
+        group2.addStudent(student3, 5);
 
-        Group<Number> group3 = new Group<>(Subject.PHYSICS);
-        group3.addStudent(student1, Subject.PHYSICS.setMark(5));
-        group3.addStudent(student2, Subject.PHYSICS.setMark(4));
+        Group group3 = new Group(Subject.PHYSICS);
+        group3.addStudent(student1, 5);
+        group3.addStudent(student2, 4);
         //group3.removeStudent(student2);
 
         Array<Group> listOfGroups = new Array<>();

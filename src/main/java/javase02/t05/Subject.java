@@ -13,9 +13,9 @@ public enum Subject {
         this.isDouble = isDouble;
     }
 
-    public Number setMark(double mark) {
+    public Number getMark(Number mark) {
         if (isDouble)
-            return mark;
-        return (int) mark;
+            return mark.doubleValue();
+        return mark.intValue();
     }
 }

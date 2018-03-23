@@ -5,10 +5,7 @@ import javase02.t02.Array;
 public class Printer {
     public static void printStudentsMarks(Array<? extends Group> listOfGroups, Student student) {
 
-        System.out.println(student.getName() +
-                " " +
-                student.getSurname() +
-                "'s marks:");
+        System.out.println(student + "'s marks:");
 
         for (int i = 0; i < listOfGroups.size(); i++) {
             if (listOfGroups.getItem(i).isStudentInTheGroup(student)) {
@@ -23,10 +20,7 @@ public class Printer {
 
     public static void printStudentsGroups(Array<? extends Group> listOfGroups, Student student) {
 
-        System.out.println(student.getName() +
-                " " +
-                student.getSurname() +
-                "'s groups:");
+        System.out.println(student + "'s groups:");
 
         for (int i = 0; i < listOfGroups.size(); i++) {
             if (listOfGroups.getItem(i).isStudentInTheGroup(student)) {

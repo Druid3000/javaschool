@@ -1,9 +1,9 @@
 package javase02.t05;
 
-public class Group<T> {
+public class Group {
 
     private Subject subject;
-    private Map<Student, T> studentsMarks = new Map<>();
+    private Map<Student, Number> studentsMarks = new Map<>();
 
     public Group(Subject subject) {
         this.subject = subject;
@@ -13,15 +13,15 @@ public class Group<T> {
         return subject;
     }
 
-    public void addStudent(Student student, T mark) {
-        studentsMarks.put(student, mark);
+    public void addStudent(Student student, Number mark) {
+        studentsMarks.put(student, subject.getMark(mark));
     }
 
     public void removeStudent(Student student) {
         studentsMarks.remove(student);
     }
 
-    public T getStudentsMarks(Student student) {
+    public Number getStudentsMarks(Student student) {
         return studentsMarks.get(student);
     }
 
