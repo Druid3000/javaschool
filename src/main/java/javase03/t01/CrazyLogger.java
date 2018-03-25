@@ -27,7 +27,7 @@ public class CrazyLogger {
 
             if (line.contains(str))
                 result.append(line);
-        } while (endOfLine != logger.length());
+        } while (endOfLine < logger.length());
         return result.toString();
     }
 }
