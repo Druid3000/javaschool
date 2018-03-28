@@ -54,7 +54,6 @@ public class KeyWordAnalyzer {
             for (String x : mapOfKeyWordsAndTheirCounts.keySet()) {
                 if (mapOfKeyWordsAndTheirCounts.get(x) != 0) {
                     tmp = x + " " + mapOfKeyWordsAndTheirCounts.get(x) + "\n";
-                    //System.out.print(tmp);
                     fileOutputStream.write(tmp.getBytes());
                 }
             }
@@ -84,23 +83,13 @@ public class KeyWordAnalyzer {
 
     public void searchForMatchingKeyWords() {
         String[] splitTextOfReadFile = textOfReadFile.toString().split("[^a-zA-Z]");
-        //String[] contentArray = text.toString().split("[\\s,.\n(,{,},(,)]+");
-        //String[] contentArray = text.toString().split("(?<=[<=|>=|==|\\\\+|\\\\*|\\\\-|<|>|/|=])|(?=[<=|>=|==|\\\\+|\\\\*|\\\\-|<|>|/|=])");
-        //StringBuilder result = new StringBuilder("");
-        // int count = 0;
         for (String i : splitTextOfReadFile) {
             for (String j : keyWords) {
                 if (i.equals(j)) {
-                    //result.append(i+" ");
-                    //count++;
-                    //Если что, то здесь можно произвести подсчет всех слов.
                     addWordToMap(i);
                 }
             }
         }
-        //result.append("count = " + count);
-
-        //System.out.println(result);
     }
 }
 
