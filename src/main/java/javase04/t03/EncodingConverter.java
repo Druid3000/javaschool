@@ -1,9 +1,6 @@
 package javase04.t03;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class EncodingConverter {
 
@@ -39,6 +36,33 @@ public class EncodingConverter {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+        }
+    }
+
+    public void writeFile(String filename) {
+        FileOutputStream fileOutputStream = null;
+        OutputStreamWriter outputStreamWriter = null;
+        BufferedWriter bufferedWriter = null;
+        try {
+            fileOutputStream = new FileOutputStream(filename);
+            outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF-16");
+            bufferedWriter = new BufferedWriter(outputStreamWriter);
+            bufferedWriter.append(textOfReadFile.toString());
+            bufferedWriter.flush();
+
+        } catch (IOException e) {
+            System.err.println("ошибка записи: " + e);
+        } finally {
+
+            //TODO Нужно ли поместить сюда InputStreamReader и BufferedWriter?
+
+            try {
+                if (fileOutputStream != null) {
+                    fileOutputStream.close();
+                }
+            } catch (IOException e) {
+                System.err.println("ошибка закрытия потока: " + e);
             }
         }
     }
