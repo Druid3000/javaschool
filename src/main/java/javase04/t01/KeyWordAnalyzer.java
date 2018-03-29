@@ -82,7 +82,7 @@ public class KeyWordAnalyzer {
     }
 
     public void searchForMatchingKeyWords() {
-        String[] splitTextOfReadFile = textOfReadFile.toString().split("[^a-zA-Z]");
+        String[] splitTextOfReadFile = textOfReadFile.toString().split("[^a-zA-Z&&[^\"a-zA-Z\']]");
         for (String i : splitTextOfReadFile) {
             for (String j : keyWords) {
                 if (i.equals(j)) {
