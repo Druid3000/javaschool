@@ -1,5 +1,5 @@
 new 4
-private 3
+private 4
 package 1
 void 4
 import 5

@@ -9,7 +9,7 @@ public class EncodingConverter {
     public void readFile(String fileName) {
         int b;
         FileInputStream fileInputStream = null;
-        InputStreamReader inputStreamReader;
+        InputStreamReader inputStreamReader; //TODO нужен ли здесь null?
         BufferedReader bufferedReader = null;
         try {
             fileInputStream = new FileInputStream(fileName);

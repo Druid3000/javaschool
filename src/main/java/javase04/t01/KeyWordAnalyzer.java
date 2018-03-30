@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class KeyWordAnalyzer {
 
-    Map<String, Integer> mapOfKeyWordsAndTheirCounts = new HashMap<>();
+    private Map<String, Integer> mapOfKeyWordsAndTheirCounts = new HashMap<>();
 
     private StringBuilder textOfReadFile = new StringBuilder();
 
@@ -32,7 +32,6 @@ public class KeyWordAnalyzer {
             while ((b = fileInputStream.read()) != -1) {
                 textOfReadFile.append((char) b);
             }
-            fileInputStream.close();
         } catch (IOException e) {
             System.err.println("Ошибка файла: " + e);
         } finally {
@@ -57,8 +56,6 @@ public class KeyWordAnalyzer {
                     fileOutputStream.write(tmp.getBytes());
                 }
             }
-            fileOutputStream.close();
-
         } catch (IOException e) {
             System.err.println("ошибка записи: " + e);
         } finally {
@@ -82,7 +79,7 @@ public class KeyWordAnalyzer {
     }
 
     public void searchForMatchingKeyWords() {
-        String[] splitTextOfReadFile = textOfReadFile.toString().split("[^a-zA-Z&&[^\"a-zA-Z\']]");
+        String[] splitTextOfReadFile = textOfReadFile.toString().split("[^a-zA-Z&&[^\"a-zA-Z]]");
         for (String i : splitTextOfReadFile) {
             for (String j : keyWords) {
                 if (i.equals(j)) {
