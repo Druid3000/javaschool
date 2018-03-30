@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class FilmCollection implements java.io.Serializable {
     private String title;
-    private Set<Film> listOfFilms=new LinkedHashSet<>();
+    private Set<Film> listOfFilms = new LinkedHashSet<>();
 
     public FilmCollection(String title) {
         this.title = title;
@@ -19,11 +19,11 @@ public class FilmCollection implements java.io.Serializable {
         this.title = title;
     }
 
-    public void addFilm(Film film){
+    public void addFilm(Film film) {
         listOfFilms.add(film);
     }
 
-    public void removeFilm(Film film){
+    public void removeFilm(Film film) {
         listOfFilms.remove(film);
     }
 
@@ -35,7 +35,7 @@ public class FilmCollection implements java.io.Serializable {
                 '}';
     }
 
-    public void printInfo(){
+    public void printInfo() {
         System.out.println("Title: " + title);
         System.out.println(" Object reference: " + super.toString());
         System.out.println(" List of Films " + listOfFilms);

@@ -1,6 +1,5 @@
 package javase04.t04;
 
-
 import java.io.*;
 
 public class Test {
@@ -27,7 +26,7 @@ public class Test {
 
         String fileName = "src/main/java/javase04/t04/filmCollection.txt";
 
-        try{
+        try {
             FileOutputStream os = new FileOutputStream(fileName);
             ObjectOutputStream oos = new ObjectOutputStream(os);
 
@@ -44,14 +43,14 @@ public class Test {
             FileInputStream is = new FileInputStream(fileName);
             ObjectInputStream ois = new ObjectInputStream(is);
 
-            while(is.available() > 0){
+            while (is.available() > 0) {
                 FilmCollection newFilmCollection = (FilmCollection) ois.readObject();
                 newFilmCollection.printInfo();
             }
 
-        } catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
