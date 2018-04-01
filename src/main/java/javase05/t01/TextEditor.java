@@ -15,17 +15,17 @@ public class TextEditor {
             fileReader = new FileReader(fileName);
             textOfReadFile = new StringBuilder();
             while ((b = fileReader.read()) != -1) {
-                textOfReadFile.append((char)b);
+                textOfReadFile.append((char) b);
             }
         } catch (IOException e) {
-            System.err.println("Ошибка файла: " + e);
+            System.err.println("Ошибка файла.");
         } finally {
             try {
                 if (fileReader != null) {
                     fileReader.close();
                 }
             } catch (IOException e) {
-                System.err.println("ошибка закрытия: " + e);
+                System.err.println("Ошибка закрытия.");
             }
         }
         return textOfReadFile.toString();
@@ -37,19 +37,19 @@ public class TextEditor {
             fileWriter = new FileWriter(filename);
             fileWriter.write(text);
         } catch (IOException e) {
-            System.err.println("ошибка записи: " + e);
+            System.err.println("Ошибка записи.");
         } finally {
             try {
                 if (fileWriter != null) {
                     fileWriter.close();
                 }
             } catch (IOException e) {
-                System.err.println("ошибка закрытия потока: " + e);
+                System.err.println("Ошибка закрытия потока.");
             }
         }
     }
 
-    public static void addTextAndWriteFile(String filename, String addedText){
-        writeFile(filename,readFile(filename)+addedText);
+    public static void addTextAndWriteFile(String filename, String addedText) {
+        writeFile(filename, readFile(filename) + addedText);
     }
 }

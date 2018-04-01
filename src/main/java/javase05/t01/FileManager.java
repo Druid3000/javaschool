@@ -19,7 +19,7 @@ public class FileManager {
         if (path.startsWith("/")) {
             return path;
         } else if (file.isFile()) {
-            return file.getPath()/* + "/"*/;
+            return file.getPath();
         } else {
             return file.getPath() + "/" + path;
         }
@@ -46,7 +46,7 @@ public class FileManager {
             }
         } catch (NullPointerException e) {
             System.out.println("There is no directory with that name.");
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Error: " + e);
         }
     }
@@ -66,9 +66,9 @@ public class FileManager {
             }
         } catch (NullPointerException e) {
             System.out.println("This is the root directory. There is no directory above.");
-        } catch (NotDirectoryException e){
+        } catch (NotDirectoryException e) {
             System.out.println("There is no directory with name " + e.getMessage() + ".");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error: " + e);
         }
     }
@@ -81,7 +81,7 @@ public class FileManager {
             System.out.println("The file was deleted.");
         } catch (FileNotFoundException e) {
             System.out.println("File does not exist.");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error: " + e);
         }
     }
