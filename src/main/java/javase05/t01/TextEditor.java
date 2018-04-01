@@ -6,7 +6,6 @@ import java.io.IOException;
 
 public class TextEditor {
 
-
     public static String readFile(String fileName) {
         int b;
         FileReader fileReader = null;

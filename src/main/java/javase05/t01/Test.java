@@ -1,7 +1,6 @@
 package javase05.t01;
 
 import java.util.Scanner;
-
 import static java.lang.System.in;
 
 public class Test {
