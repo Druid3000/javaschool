@@ -11,7 +11,7 @@ public class ResourceManager {
 
     Map<String, String> bundleMap = new HashMap<>();
 
-    public ResourceManager(String path) {
+    public void loadBundleFromResources(String path) {
         try {
             resourceBundle = ResourceBundle.getBundle(path);
             Set<String> z  = resourceBundle.keySet();
