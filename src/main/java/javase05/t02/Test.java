@@ -5,7 +5,7 @@ public class Test {
         ResourceManager resourceManager = new ResourceManager();
 
         resourceManager.loadBundleFromResources("prop");
-        System.out.println(resourceManager.getValue("key1"));
+        System.out.println(resourceManager.getValueFromBundleFromResources("key1"));
 
         resourceManager.loadExtendedPropertyFile("src/main/resources/prop.properties");
         System.out.println(resourceManager.getValueFromExtendedPropertyFile("key1"));

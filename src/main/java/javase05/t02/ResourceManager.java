@@ -19,7 +19,7 @@ public class ResourceManager {
         }
     }
 
-    public String getValue(String key) {
+    public String getValueFromBundleFromResources(String key) {
         try {
             return resourceBundle.getString(key);
         } catch (NullPointerException e) {
