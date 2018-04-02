@@ -16,6 +16,7 @@ public class TextEditor {
             while ((b = fileReader.read()) != -1) {
                 textOfReadFile.append((char) b);
             }
+            return textOfReadFile.toString();
         } catch (IOException e) {
             System.err.println("Ошибка файла.");
         } finally {
@@ -27,7 +28,7 @@ public class TextEditor {
                 System.err.println("Ошибка закрытия.");
             }
         }
-        return textOfReadFile.toString();
+        return null;
     }
 
     public static void writeFile(String filename, String text) {
