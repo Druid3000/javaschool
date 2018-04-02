@@ -14,8 +14,8 @@ public class ResourceManager {
     public void loadBundleFromResources(String path) {
         try {
             resourceBundle = ResourceBundle.getBundle(path);
-            Set<String> z  = resourceBundle.keySet();
-            for (String key : z) {
+            Set<String> keySetOfResourceBundle  = resourceBundle.keySet();
+            for (String key : keySetOfResourceBundle) {
                 bundleMap.put(key, resourceBundle.getString(key));
             }
         } catch (MissingResourceException e) {
@@ -27,7 +27,10 @@ public class ResourceManager {
         try (FileReader fileReader = new FileReader(file);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             properties.load(bufferedReader);
-            properties.putAll(bundleMap);
+            //properties.putAll(bundleMap);
+            for (String key : properties.stringPropertyNames()) {
+                bundleMap.put(key, properties.getProperty(key));
+            }
         } catch (IOException e) {
             System.out.println("File does not exist");
         }
