@@ -30,25 +30,41 @@ public class ResourceManager {
         return null;
     }
 
-    public void loadPropertyFile(String file) {
+    public void loadExtendedPropertyFile(String file) {
         try (FileReader fileReader = new FileReader(file);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-            properties.load(fileReader);
+            properties.load(bufferedReader);
         } catch (IOException e) {
             System.out.println("File does not exist");
         }
     }
 
-    public String getValueFromProperty(String key) {
+    public String getValueFromExtendedPropertyFile(String key) {
         try {
             if (properties.getProperty(key) == null)
                 throw new IllegalArgumentException("Key does not exist");
             return properties.getProperty(key);
         } catch (NullPointerException e) {
-            System.out.println("Key does not exist");
+            System.out.println("File does not exist");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
         return null;
+
+        //TODO properties.putAll();
+
+
+//        Map<String, String> map = new HashMap<>();
+//        while (bundleKeys.hasMoreElements()) {
+//            String bundleKey = bundleKeys.nextElement().toString();
+//            if (bundleKey.equals("")) throw new NullPointerException("Key does not exist");
+//            String bundleValue = bundle.getString(bundleKey);
+//            map.put(bundleKey, bundleValue);
+//        }
+//        for (Map.Entry entry : map.entrySet()) {
+//            System.out.println("Key: "+entry.getKey()+ "\nValue: "+entry.getValue());
+//        }
+
+        //todo у казачковой взял вот то, что выше.
     }
 }
