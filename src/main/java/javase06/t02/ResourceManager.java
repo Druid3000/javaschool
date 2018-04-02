@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class ResourceManager {
-    Map<String, String> bundleMap = new HashMap<>();
+    private Map<String, String> bundleMap = new HashMap<>();
 
     public void loadBundleFromResources(String path) {
         ResourceBundle resourceBundle;
