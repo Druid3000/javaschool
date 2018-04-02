@@ -6,12 +6,10 @@ import java.io.IOException;
 import java.util.*;
 
 public class ResourceManager {
-    private ResourceBundle resourceBundle;
-    private Properties properties = new Properties();
-
     Map<String, String> bundleMap = new HashMap<>();
 
     public void loadBundleFromResources(String path) {
+        ResourceBundle resourceBundle;
         try {
             resourceBundle = ResourceBundle.getBundle(path);
             Set<String> keySetOfResourceBundle  = resourceBundle.keySet();
@@ -24,10 +22,10 @@ public class ResourceManager {
     }
 
     public void loadExtendedPropertyFile(String file) {
+        Properties properties = new Properties();
         try (FileReader fileReader = new FileReader(file);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             properties.load(bufferedReader);
-            //properties.putAll(bundleMap);
             for (String key : properties.stringPropertyNames()) {
                 bundleMap.put(key, properties.getProperty(key));
             }
