@@ -2,7 +2,9 @@ package javase05.t02;
 
 public class Test {
     public static void main(String[] args) {
-        ResourceManager resourceManager = new ResourceManager("prop");
+        ResourceManager resourceManager = new ResourceManager();
+
+        resourceManager.loadBundleFromResources("prop");
         System.out.println(resourceManager.getValue("key1"));
 
         resourceManager.loadExtendedPropertyFile("src/main/resources/prop.properties");

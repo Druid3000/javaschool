@@ -11,7 +11,7 @@ public class ResourceManager {
     private ResourceBundle resourceBundle;
     private Properties properties = new Properties();
 
-    public ResourceManager(String path) {
+    public void loadBundleFromResources(String path) {
         try {
             resourceBundle = ResourceBundle.getBundle(path);
         } catch (MissingResourceException e) {
