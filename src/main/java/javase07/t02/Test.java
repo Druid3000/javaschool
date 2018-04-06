@@ -3,7 +3,7 @@ package javase07.t02;
 public class Test {
     public static void main(String[] args) {
 
-        String pathToFile = "src/javase07/t02/prop.properties";
+        String pathToFile = "src/main/java/javase07/t02/prop.properties";
 
         ResourceManager resourceManager1
                 = new ResourceManager("Thread 1", pathToFile, "key1");

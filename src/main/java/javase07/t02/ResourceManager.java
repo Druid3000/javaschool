@@ -17,7 +17,7 @@ public class ResourceManager extends Thread {
         this.start();
     }
 
-    public synchronized void loadPropertyFile(String pathToFile) {
+    private synchronized void loadPropertyFile(String pathToFile) {
         try (FileReader fileReader = new FileReader(pathToFile);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             properties.load(bufferedReader);
@@ -26,7 +26,7 @@ public class ResourceManager extends Thread {
         }
     }
 
-    public String getValue(String key) {
+    private String getValue(String key) {
         try {
             if (properties.getProperty(key) == null)
                 throw new IllegalArgumentException("Key does not exist");
