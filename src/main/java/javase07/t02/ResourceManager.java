@@ -39,5 +39,9 @@ public class ResourceManager extends Thread {
         return null;
     }
 
-
+    @Override
+    public void run() {
+        this.loadPropertyFile(pathToFile);
+        System.out.println(this.getName() + ": " + this.getValue(key));
+    }
 }
