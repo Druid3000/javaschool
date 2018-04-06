@@ -24,13 +24,6 @@ public class TransactionHandler extends Thread {
         return null;
     }
 
-    private void printInformationAboutTransaction(Account account) {
-        System.out.println(this.getName() +
-                ": -" + amount +
-                " from " + account.getId() + "\n" +
-                account.getId() + ": " + account.getBalance());
-    }
-
     private boolean readInput() {
         synchronized (in) {
 
@@ -51,10 +44,16 @@ public class TransactionHandler extends Thread {
         while (readInput()) {
 
             withdrawalAccount.withdraw(amount);
-            printInformationAboutTransaction(withdrawalAccount);
+            System.out.println(this.getName() +
+                    ": -" + amount +
+                    " from " + withdrawalAccount.getId() + "\n" +
+                    withdrawalAccount.getId() + ": " + withdrawalAccount.getBalance());
 
             depositAccount.deposit(amount);
-            printInformationAboutTransaction(depositAccount);
+            System.out.println(this.getName() +
+                    ": +" + amount +
+                    " to " + depositAccount.getId() + "\n" +
+                    depositAccount.getId() + ": " + depositAccount.getBalance());
 
             System.out.println();
 
