@@ -6,6 +6,7 @@ class IntegerSetterGetter extends Thread {
     private SharedResource resource;
     private boolean run;
     private Random rand = new Random();
+    private volatile boolean status;
     public IntegerSetterGetter(String name, SharedResource resource) {
         super(name);
         this.resource = resource;
@@ -17,13 +18,14 @@ class IntegerSetterGetter extends Thread {
     }
 
     public void run() {
-
         int action;
         try {
             while (run) {
                 action = rand.nextInt(1000);
                 if (action % 2 == 0) {
-                    getIntegersFromResource();
+                    status = false;
+                    if (status) getIntegersFromResource();
+                    status = true;
                 } else {
                     setIntegersIntoResource();
                 }
@@ -59,4 +61,3 @@ class IntegerSetterGetter extends Thread {
         }
     }
 }
-
