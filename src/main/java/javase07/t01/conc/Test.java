@@ -37,6 +37,8 @@ public class Test {
                 e.printStackTrace();
             }
 
+            ex.shutdown();
+
             System.out.println(accounts);
 
         } catch (IOException e) {

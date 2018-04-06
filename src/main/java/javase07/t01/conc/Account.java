@@ -19,15 +19,30 @@ public class Account {
     }
 
     public int getBalance() {
-        return balance;
+        try {
+            lock.lock();
+            return balance;
+        } finally {
+        lock.unlock();
+        }
     }
 
     public void deposit(int amount) {
-        balance = balance + amount;
+        try {
+            lock.lock();
+            balance = balance + amount;
+        } finally {
+            lock.unlock();
+        }
     }
 
     public void withdraw(int amount) {
-        balance = balance - amount;
+        try {
+            lock.lock();
+            balance = balance - amount;
+        } finally {
+            lock.unlock();
+        }
     }
 
     @Override

@@ -34,7 +34,6 @@ public class TransactionHandler implements Callable<Integer> {
     private boolean readInput() {
         try {
             lock.lock();
-//            synchronized (in) {
             if (in.hasNextInt()) withdrawalAccount = findAccount(in.nextInt());
             else return false;
 
@@ -43,7 +42,7 @@ public class TransactionHandler implements Callable<Integer> {
 
             if (in.hasNextInt()) amount = in.nextInt();
             else return false;
-        }finally {
+        }finally{
             lock.unlock();
         }
         return true;
@@ -53,29 +52,22 @@ public class TransactionHandler implements Callable<Integer> {
     public Integer call()
     {
         while (readInput()) {
+            withdrawalAccount.withdraw(amount);
+            System.out.println("Thread " + threadNumber +
+                    ": -" + amount +
+                    " from " + withdrawalAccount.getId() + "\n" +
+                    withdrawalAccount.getId() + ": " + withdrawalAccount.getBalance());
 
-            try {
-                lock.lock();
-                withdrawalAccount.withdraw(amount);
-                System.out.println("Thread " + threadNumber +
-                        ": -" + amount +
-                        " from " + withdrawalAccount.getId() + "\n" +
-                        withdrawalAccount.getId() + ": " + withdrawalAccount.getBalance());
-
-                depositAccount.deposit(amount);
-                System.out.println("Thread " + threadNumber +
-                        ": +" + amount +
-                        " to " + depositAccount.getId() + "\n" +
-                        depositAccount.getId() + ": " + depositAccount.getBalance());
-
-            }finally {
-                lock.unlock();
-            }
+            depositAccount.deposit(amount);
+            System.out.println("Thread " + threadNumber +
+                    ": +" + amount +
+                    " to " + depositAccount.getId() + "\n" +
+                    depositAccount.getId() + ": " + depositAccount.getBalance());
 
             System.out.println();
 
             try {
-                TimeUnit.MICROSECONDS.sleep(100);
+                TimeUnit.MICROSECONDS.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
