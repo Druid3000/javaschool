@@ -1,5 +1,8 @@
 package javase07.t02;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Properties;
 
 public class ResourceManager extends Thread {
@@ -13,5 +16,28 @@ public class ResourceManager extends Thread {
         this.key = key;
         this.start();
     }
+
+    public synchronized void loadPropertyFile(String pathToFile) {
+        try (FileReader fileReader = new FileReader(pathToFile);
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+            properties.load(bufferedReader);
+        } catch (IOException e) {
+            System.out.println("File does not exist");
+        }
+    }
+
+    public String getValue(String key) {
+        try {
+            if (properties.getProperty(key) == null)
+                throw new IllegalArgumentException("Key does not exist");
+            return properties.getProperty(key);
+        } catch (NullPointerException e) {
+            System.out.println("File does not exist");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
 
 }
