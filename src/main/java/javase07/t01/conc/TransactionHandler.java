@@ -21,7 +21,6 @@ public class TransactionHandler implements Callable<Integer> {
         this.accounts = accounts;
         this.in = in;
         this.threadNumber = threadNumber;
-
     }
 
     private Account findAccount(int id) {
@@ -42,15 +41,14 @@ public class TransactionHandler implements Callable<Integer> {
 
             if (in.hasNextInt()) amount = in.nextInt();
             else return false;
-        }finally{
+        } finally {
             lock.unlock();
         }
         return true;
     }
 
     @Override
-    public Integer call()
-    {
+    public Integer call() {
         while (readInput()) {
             withdrawalAccount.withdraw(amount);
             System.out.println("Thread " + threadNumber +

@@ -17,18 +17,18 @@ public class Test {
             in = new Scanner(bufferedReader);
 
             List<Account> accounts = new ArrayList<Account>();
-            accounts.add(new Account(4561,10_000));
-            accounts.add(new Account(3122,10_000));
-            accounts.add(new Account(9553,10_000));
-            accounts.add(new Account(3684,10_000));
-            accounts.add(new Account(3575,10_000));
-            accounts.add(new Account(1476,10_000));
-            accounts.add(new Account(6577,10_000));
+            accounts.add(new Account(4561, 10_000));
+            accounts.add(new Account(3122, 10_000));
+            accounts.add(new Account(9553, 10_000));
+            accounts.add(new Account(3684, 10_000));
+            accounts.add(new Account(3575, 10_000));
+            accounts.add(new Account(1476, 10_000));
+            accounts.add(new Account(6577, 10_000));
 
             ExecutorService ex = Executors.newCachedThreadPool();
 
-            Future<Integer> s1 = ex.submit(new TransactionHandler(accounts,1, in));
-            Future<Integer> s2 = ex.submit(new TransactionHandler(accounts,2, in));
+            Future<Integer> s1 = ex.submit(new TransactionHandler(accounts, 1, in));
+            Future<Integer> s2 = ex.submit(new TransactionHandler(accounts, 2, in));
 
             try {
                 s1.get();

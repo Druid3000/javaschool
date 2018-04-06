@@ -23,7 +23,7 @@ public class Account {
             lock.lock();
             return balance;
         } finally {
-        lock.unlock();
+            lock.unlock();
         }
     }
 
