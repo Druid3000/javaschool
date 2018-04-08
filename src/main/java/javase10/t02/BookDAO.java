@@ -1,6 +1,9 @@
 package javase10.t02;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class BookDAO extends AbstractDAO {
 
@@ -13,6 +16,35 @@ public class BookDAO extends AbstractDAO {
 
     public BookDAO(Connection connection) {
         super(connection);
+    }
+
+    public void addSomeInformationToLibrary(){
+
+    }
+
+    public void findSomeInformationInLibrary(){
+
+    }
+    public void deleteSomeInformationFromLibrary(){
+
+    }
+
+    public void printALlStudents() {
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(SQL_SELECT_FROM);
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("name") + " " +
+                        resultSet.getInt("id_group"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            this.closeStatement(statement);
+            this.closeResultSet(resultSet);
+        }
     }
 
 }
