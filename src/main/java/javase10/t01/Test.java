@@ -20,16 +20,15 @@ public class Test {
         // a) извлеките информацию из таблицы с помощью подготовленного запроса;
         databaseHandler.executeQueryWithPreparedStatement("SELECT * FROM students");
 
-        // б)обновите несколько записей в таблице;
+        // б) обновите несколько записей в таблице;
         databaseHandler.addBatchStatement("UPDATE students SET name = 'NewPetrov' WHERE id_group = 6");
         databaseHandler.addBatchStatement("UPDATE students SET name = 'NewSidorov' WHERE id_group = 5");
         databaseHandler.executeBatchStatement();
 
-
         // в) выберите конкретную запись в таблице;
         databaseHandler.executeQuery("SELECT * FROM students WHERE id_group = 6");
 
-        // д)Удалить таблицу
+        // д) удалить таблицу
         databaseHandler.executeUpdate("DROP TABLE students");
 
         databaseHandler.close();
