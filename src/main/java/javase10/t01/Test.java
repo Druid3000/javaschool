@@ -29,7 +29,7 @@ public class Test {
         databaseHandler.executeQuery("SELECT * FROM students WHERE id_group = 6");
 
         // д) удалить таблицу
-        databaseHandler.executeUpdate("DROP TABLE students");
+        //databaseHandler.executeUpdate("DROP TABLE students");
 
         databaseHandler.close();
     }
