@@ -73,9 +73,10 @@ public class DatabaseHandler {
 
     public void executeQueryWithPreparedStatement(String request) {
         ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
         try {
-            PreparedStatement ps = connection.prepareStatement(request);
-            resultSet = ps.executeQuery();
+            preparedStatement = connection.prepareStatement(request);
+            resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("name") + " " +
                         resultSet.getInt("id_group"));
@@ -85,6 +86,7 @@ public class DatabaseHandler {
         } finally {
             try {
                 if (resultSet != null) resultSet.close();
+                if (preparedStatement != null) preparedStatement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

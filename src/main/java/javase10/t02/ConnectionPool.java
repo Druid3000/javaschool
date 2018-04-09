@@ -56,6 +56,7 @@ public class ConnectionPool {
     }
 
     //TODO нужно ли закрывать конекшны здесь или достаточно в abstractDAO?
+    //В abstractDAO закрывается только один коннект, а нам нужно все закрыть.
     synchronized public void closeAllConnections() {
         try {
             for(Connection x : readyToUse){

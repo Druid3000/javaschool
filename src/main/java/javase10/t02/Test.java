@@ -28,6 +28,10 @@ public class Test {
         bookDAO.searchBooks("The Cherry Orchard");
 
         bookDAO.deleteTable();
+        bookDAO.close();
+
+        connectionPool.closeAllConnections();
+
 
 //        //Тестирование класса ConnectionPool
 //        ConnectionPool connectionPool = new ConnectionPool();
