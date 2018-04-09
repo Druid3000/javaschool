@@ -28,8 +28,8 @@ public class Test {
         bookDAO.searchBooks("The Cherry Orchard");
 
         bookDAO.deleteTable();
-        bookDAO.close();
 
+        connectionPool.putConnection(connection);
         connectionPool.closeAllConnections();
 
 
