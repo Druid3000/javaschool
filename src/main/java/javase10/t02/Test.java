@@ -11,8 +11,13 @@ public class Test {
         BookDAO bookDAO = new BookDAO(connection);
 
         bookDAO.createTableBooks();
-        bookDAO.addBook("The Master and Margarita", "Mikhail Bulgakov", 1966);
+        bookDAO.addBook(1, "The Master and Margarita", "Mikhail Bulgakov", 1966);
 
+        bookDAO.printALlBooks();
+        //bookDAO.deleteBooksByTitle("The Master and Margarita");
+        //bookDAO.deleteBookById(1);
+        //bookDAO.deleteBooksByAuthor("Mikhail Bulgakov");
+        //bookDAO.deleteBooksByYear(1966);
         bookDAO.printALlBooks();
 
         bookDAO.deleteTable();
