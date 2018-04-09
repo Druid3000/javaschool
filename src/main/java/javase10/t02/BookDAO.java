@@ -110,7 +110,7 @@ public class BookDAO extends AbstractDAO {
         deleteBooksByNumericalValue(year_of_publication, SQL_DELETE_BOOKS_BY_YEAR_OF_PUBLICATION);
     }
 
-    protected String resultSetConvertToString(ResultSet resultSet){
+    protected String resultSetConvertToString(ResultSet resultSet) {
         StringBuilder stringBuilder = new StringBuilder();
         try {
             while (resultSet.next()) {
@@ -123,7 +123,7 @@ public class BookDAO extends AbstractDAO {
                 stringBuilder.append(resultSet.getInt("year_of_publication"));
                 stringBuilder.append("\n");
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return stringBuilder.toString();
