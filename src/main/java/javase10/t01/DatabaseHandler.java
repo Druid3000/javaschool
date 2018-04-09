@@ -72,9 +72,7 @@ public class DatabaseHandler {
     }
 
     public void executeQueryWithPreparedStatement(String request) {
-        Statement statement = null;
         ResultSet resultSet = null;
-
         try {
             PreparedStatement ps = connection.prepareStatement(request);
             resultSet = ps.executeQuery();
@@ -86,7 +84,7 @@ public class DatabaseHandler {
             e.printStackTrace();
         } finally {
             try {
-                if (statement != null) statement.close();
+                if (resultSet != null) resultSet.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
