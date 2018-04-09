@@ -43,8 +43,7 @@ public class ConnectionPool {
                 System.out.println("Connection is not established");
             }
         }
-        Connection connection = readyToUseConnections.poll();
-        return connection;
+        return readyToUseConnections.poll();
     }
 
     synchronized public void putConnection(Connection connection) {

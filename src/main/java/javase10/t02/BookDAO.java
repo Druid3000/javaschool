@@ -110,67 +110,77 @@ public class BookDAO extends AbstractDAO {
         deleteBooksByNumericalValue(year_of_publication, SQL_DELETE_BOOKS_BY_YEAR_OF_PUBLICATION);
     }
 
-    public void searchBooks(int numericalValue) {
+    protected String resultSetConvertToString(ResultSet resultSet){
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            while (resultSet.next()) {
+                stringBuilder.append(resultSet.getInt("id_book"));
+                stringBuilder.append(" ");
+                stringBuilder.append(resultSet.getString("title"));
+                stringBuilder.append(" ");
+                stringBuilder.append(resultSet.getString("author"));
+                stringBuilder.append(" ");
+                stringBuilder.append(resultSet.getInt("year_of_publication"));
+                stringBuilder.append("\n");
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return stringBuilder.toString();
+    }
+
+    public String searchBooks(int numericalValue) {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
+        String result = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_BOOK_BY_NUMERIC_VALUE);
             preparedStatement.setInt(1, numericalValue);
             preparedStatement.setInt(2, numericalValue);
             resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt("id_book") + " " +
-                        resultSet.getString("title") + " " +
-                        resultSet.getString("author") + " " +
-                        resultSet.getInt("year_of_publication"));
-            }
+            result = resultSetConvertToString(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             this.closeResultSet(resultSet);
             this.closeStatement(preparedStatement);
         }
+        return result;
     }
 
-    public void searchBooks(String lineValue) {
+    public String searchBooks(String lineValue) {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
+        String result = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_BOOK_BY_LINE_VALUE);
             preparedStatement.setString(1, lineValue);
             preparedStatement.setString(2, lineValue);
             resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt("id_book") + " " +
-                        resultSet.getString("title") + " " +
-                        resultSet.getString("author") + " " +
-                        resultSet.getInt("year_of_publication"));
-            }
+            result = resultSetConvertToString(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             this.closeResultSet(resultSet);
             this.closeStatement(preparedStatement);
         }
+        return result;
     }
 
-    public void printALlBooks() {
+    public String getALlBooks() {
         Statement statement = null;
         ResultSet resultSet = null;
+        String result = null;
         try {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(SQL_SELECT_ALL_BOOKS);
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt("id_book") + " " +
-                        resultSet.getString("title") + " " +
-                        resultSet.getString("author") + " " +
-                        resultSet.getInt("year_of_publication"));
-            }
+            result = resultSetConvertToString(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             this.closeStatement(statement);
             this.closeResultSet(resultSet);
         }
+        return result;
     }
 }

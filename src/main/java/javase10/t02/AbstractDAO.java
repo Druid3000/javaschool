@@ -16,6 +16,8 @@ public abstract class AbstractDAO {
 
     public abstract void deleteTable();
 
+    protected abstract String resultSetConvertToString(ResultSet resultSet);
+
     protected void closeStatement(Statement statement) {
         try {
             if (statement != null) statement.close();

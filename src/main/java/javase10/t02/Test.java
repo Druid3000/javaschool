@@ -16,16 +16,16 @@ public class Test {
         bookDAO.addBook(3, "The Cherry Orchard", "Anton Chekhov", 1903);
         bookDAO.addBook(4, "The Tale of the Fisherman and the Fish", " Alexander Pushkin", 1835);
 
-        bookDAO.printALlBooks();
-        //bookDAO.deleteBooksByTitle("The Master and Margarita");
-        //bookDAO.deleteBookById(1);
+        System.out.println(bookDAO.getALlBooks());
+        //bookDAO.deleteBooksByTitle("The Cherry Orchard");
+        //bookDAO.deleteBookById(3);
         //bookDAO.deleteBooksByAuthor("Mikhail Bulgakov");
         //bookDAO.deleteBooksByYear(1966);
-        //bookDAO.printALlBooks();
+       System.out.println(bookDAO.getALlBooks());
 
         System.out.println("Search results:");
-        bookDAO.searchBooks(1866);
-        bookDAO.searchBooks("The Cherry Orchard");
+        System.out.println(bookDAO.searchBooks(1866));
+        System.out.println(bookDAO.searchBooks("The Cherry Orchard"));
 
         bookDAO.deleteTable();
 
