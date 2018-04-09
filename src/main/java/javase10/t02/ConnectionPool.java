@@ -12,28 +12,27 @@ public class ConnectionPool {
     private final String DB_USER;
     private final String DB_PASSWORD;
 
-    private static PriorityQueue<Connection> readyToUse;
-    private static ArrayList<Connection> alreadyInUse;
+    private static PriorityQueue<Connection> readyToUseConnections;
+    private static ArrayList<Connection> alreadyInUseConnections;
 
     public ConnectionPool() {
+        DataBaseManager dataBaseManager = new DataBaseManager();
+        DB_DRIVER = dataBaseManager.getValue(DataBaseManager.DB_DRIVER);
+        DB_URL = dataBaseManager.getValue(DataBaseManager.DB_URL);
+        DB_USER = dataBaseManager.getValue(DataBaseManager.DB_USER);
+        DB_PASSWORD = dataBaseManager.getValue(DataBaseManager.DB_PASSWORD);
 
-        this.DB_DRIVER = "org.gjt.mm.mysql.Driver";
-        this.DB_URL = "jdbc:mysql://127.0.0.1/test";
-        this.DB_USER = "druid";
-        this.DB_PASSWORD = "12345";
-
-        readyToUse = new PriorityQueue<>();
-        alreadyInUse = new ArrayList<>();
+        readyToUseConnections = new PriorityQueue<>();
+        alreadyInUseConnections = new ArrayList<>();
     }
 
     synchronized public Connection getConnection() {
 
-        if(readyToUse.size()==0)
-        {
+        if (readyToUseConnections.size() == 0) {
             try {
                 Class.forName(DB_DRIVER);
                 Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-                alreadyInUse.add(connection);
+                alreadyInUseConnections.add(connection);
                 System.out.println("Connection is established");
                 return connection;
             } catch (ClassNotFoundException e) {
@@ -44,24 +43,23 @@ public class ConnectionPool {
                 System.out.println("Connection is not established");
             }
         }
-        Connection connection = readyToUse.poll();
+        Connection connection = readyToUseConnections.poll();
         return connection;
     }
 
     synchronized public void putConnection(Connection connection) {
-        if(connection != null) {
-            alreadyInUse.remove(connection);
-            readyToUse.add(connection);
+        if (connection != null) {
+            alreadyInUseConnections.remove(connection);
+            readyToUseConnections.add(connection);
         }
     }
 
     synchronized public void closeAllConnections() {
         try {
-            for(Connection x : readyToUse){
+            for (Connection x : readyToUseConnections) {
                 if (x != null) x.close();
             }
-
-            for(Connection x : alreadyInUse){
+            for (Connection x : alreadyInUseConnections) {
                 if (x != null) x.close();
             }
             System.out.println("Connections is closed");
