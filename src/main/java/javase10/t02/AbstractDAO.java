@@ -12,9 +12,9 @@ public abstract class AbstractDAO {
         this.connection = connection;
     }
 
-    public abstract void addSomeInformationToLibrary();
-    public abstract void findSomeInformationInLibrary();
-    public abstract void deleteSomeInformationFromLibrary();
+    public abstract void createTable();
+
+    public abstract void deleteTable();
 
     //todo я не знаю, нужно ли здесь закрывать statement,
     //Нужно, просто вызывается каждый раз этот метод и в него помещается statement

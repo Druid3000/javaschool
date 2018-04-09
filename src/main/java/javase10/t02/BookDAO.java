@@ -22,11 +22,7 @@ public class BookDAO extends AbstractDAO {
         super(connection);
     }
 
-    public void addSomeInformationToLibrary(){ }
-    public void findSomeInformationInLibrary(){ }
-    public void deleteSomeInformationFromLibrary(){ }
-
-    public void createTableBooks(){
+    public void createTable() {
         Statement statement = null;
         try {
             statement = connection.createStatement();
@@ -52,7 +48,7 @@ public class BookDAO extends AbstractDAO {
         }
     }
 
-    public void addBook(int id, String title, String author, int yearOfPublication){
+    public void addBook(int id, String title, String author, int yearOfPublication) {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_INSERT_NEW_BOOK);
@@ -68,7 +64,7 @@ public class BookDAO extends AbstractDAO {
         }
     }
 
-    private void deleteBooksByNumericalValue(int numericalValue, String request){
+    private void deleteBooksByNumericalValue(int numericalValue, String request) {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(request);
@@ -98,23 +94,23 @@ public class BookDAO extends AbstractDAO {
         }
     }
 
-    public void deleteBookById(int id){
+    public void deleteBookById(int id) {
         deleteBooksByNumericalValue(id, SQL_DELETE_BOOK_BY_ID);
     }
 
-    public void deleteBooksByTitle(String title){
+    public void deleteBooksByTitle(String title) {
         deleteBooksByLineValue(title, SQL_DELETE_BOOKS_BY_TITLE);
     }
 
-    public void deleteBooksByAuthor(String author){
+    public void deleteBooksByAuthor(String author) {
         deleteBooksByLineValue(author, SQL_DELETE_BOOKS_BY_AUTHOR);
     }
 
-    public void deleteBooksByYear(int year_of_publication){
+    public void deleteBooksByYear(int year_of_publication) {
         deleteBooksByNumericalValue(year_of_publication, SQL_DELETE_BOOKS_BY_YEAR_OF_PUBLICATION);
     }
 
-    public void searchBooks(int numericalValue){
+    public void searchBooks(int numericalValue) {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try {

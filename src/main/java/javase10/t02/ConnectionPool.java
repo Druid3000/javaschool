@@ -72,11 +72,4 @@ public class ConnectionPool {
             System.out.println("Connections is not closed");
         }
     }
-
-    //TODO Сервисный метод. Удалить потом его.
-    public void getInfo(){
-        System.out.println(readyToUse);
-        System.out.println(alreadyInUse);
-    }
-
 }

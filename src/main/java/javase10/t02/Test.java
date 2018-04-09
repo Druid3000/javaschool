@@ -10,7 +10,7 @@ public class Test {
 
         BookDAO bookDAO = new BookDAO(connection);
 
-        bookDAO.createTableBooks();
+        bookDAO.createTable();
         bookDAO.addBook(1, "The Master and Margarita", "Mikhail Bulgakov", 1966);
         bookDAO.addBook(2, "Crime and Punishment", "Fyodor Dostoevsky", 1866);
         bookDAO.addBook(3, "The Cherry Orchard", "Anton Chekhov", 1903);
