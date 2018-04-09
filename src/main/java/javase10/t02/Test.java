@@ -10,10 +10,12 @@ public class Test {
 
         BookDAO bookDAO = new BookDAO(connection);
 
-        //bookDAO.createTableBooks();
+        bookDAO.createTableBooks();
         bookDAO.addBook("The Master and Margarita", "Mikhail Bulgakov", 1966);
 
         bookDAO.printALlBooks();
+
+        bookDAO.deleteTable();
 
 //        //Тестирование класса ConnectionPool
 //        ConnectionPool connectionPool = new ConnectionPool();
