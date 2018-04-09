@@ -31,17 +31,5 @@ public class Test {
 
         connectionPool.putConnection(connection);
         connectionPool.closeAllConnections();
-
-
-//        //Тестирование класса ConnectionPool
-//        ConnectionPool connectionPool = new ConnectionPool();
-//        Connection connection = connectionPool.getConnection();
-//        System.out.println(connection);
-//        connectionPool.getInfo();
-//        connectionPool.putConnection(connection);
-//        System.out.println();
-//        connectionPool.close();
-//        connectionPool.getInfo();
-
     }
 }

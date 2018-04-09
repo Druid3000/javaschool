@@ -16,8 +16,6 @@ public abstract class AbstractDAO {
 
     public abstract void deleteTable();
 
-    //todo я не знаю, нужно ли здесь закрывать statement,
-    //Нужно, просто вызывается каждый раз этот метод и в него помещается statement
     protected void closeStatement(Statement statement) {
         try {
             if (statement != null) statement.close();
