@@ -21,7 +21,7 @@ public class Test {
         //bookDAO.deleteBookById(3);
         //bookDAO.deleteBooksByAuthor("Mikhail Bulgakov");
         //bookDAO.deleteBooksByYear(1966);
-        System.out.println(bookDAO.getALlBooks());
+        //System.out.println(bookDAO.getALlBooks());
 
         System.out.println("Search results:");
         System.out.println(bookDAO.searchBooks(1866));

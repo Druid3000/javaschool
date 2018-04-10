@@ -1,12 +1,9 @@
 package javase04.t04;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 public class Film implements java.io.Serializable {
     private String title;
     private int yearOfIssue;
-    private Set<Actor> cast = new LinkedHashSet<>();
+    private Set<Actor> cast = new Set<>();
 
     public Film(String title, int yearOfIssue) {
         this.title = title;
@@ -30,7 +27,7 @@ public class Film implements java.io.Serializable {
     }
 
     public void addActor(Actor actor) {
-        cast.add(actor);
+        cast.put(actor);
     }
 
     public void removeActor(Actor actor) {
