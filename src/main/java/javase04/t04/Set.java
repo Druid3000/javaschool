@@ -1,7 +1,7 @@
 package javase04.t04;
 
 public class Set<T> implements java.io.Serializable {
-    private final int DEFAULT_CAPACITY = 3;
+    private final int DEFAULT_CAPACITY = 10;
     private Object[] array = new Object[DEFAULT_CAPACITY];
     private int cursor = 0;
 
