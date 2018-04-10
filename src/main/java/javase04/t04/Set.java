@@ -55,7 +55,7 @@ public class Set<T> implements java.io.Serializable {
         array = newArray;
     }
 
-    private String itemsToString(){
+    private String itemsToString() {
 
         StringBuilder tmp = new StringBuilder();
         for (int i = 0; i < cursor; i++) {
@@ -66,6 +66,6 @@ public class Set<T> implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Set{" +itemsToString()+ '}';
+        return "Set{" + itemsToString() + '}';
     }
 }
